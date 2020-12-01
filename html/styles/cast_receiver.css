@@ -1,0 +1,131 @@
+html,
+body {
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.scrolldisabler {
+    position: absolute;
+    background-color: transparent;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+}
+
+#toolbar {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#toolbar>* {
+    float: right;
+}
+
+#toolbar button.chrome {
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 0px solid transparent;
+    border-radius: 0;
+    color: #ffffff;
+    height: 32px;
+    width: 48px;
+    overflow: hidden;
+    line-height: 32px !important;
+    text-align: center;
+    transition: all 0.3s linear;
+    outline: none;
+    font-size: 12px;
+    cursor: default;
+}
+
+#toolbar button.chrome:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.05s linear;
+}
+
+#toolbar button.chrome.close:hover {
+    background-color: rgba(255, 0, 0, 1.0);
+}
+
+#toolbar button.chrome [class^="mdl2-"]::before,
+#toolbar button.chrome [class*="mdl2-"]::before {
+    font-size: inherit !important;
+    line-height: inherit !important;
+    color: inherit !important;
+}
+
+.fullscreen .mdl2-chrome-full-screen::before {
+    content: '\e92c';
+}
+
+.gridcontainer {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#eyeline {
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: stretch;
+    align-self: end;
+    height: 1px;
+    background-color: #7f7f7f;
+    fill: #7f7f7f;
+}
+
+#eyeline .leftarrow {
+    float: left;
+    margin-left: -50px;
+    margin-top: -100px;
+}
+
+#eyeline .rightarrow {
+    float: right;
+    margin-right: -50px;
+    margin-top: -100px;
+}
+
+.scrollcontainer {
+    grid-row: 1 / 3;
+    grid-column: 1;
+    position: relative;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+    margin: 0;
+    padding: 0 50px;
+}
+
+.scrollcontainer::-webkit-scrollbar,
+#content::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+}
+
+.scrollcontainer .vspacer {
+    display: block;
+    height: 50%;
+    width: 10px;
+    /*background-color: red;*/
+}
+
+#content {
+    font-size: 72pt;
+    line-height: 1.2;
+    color: cyan;
+    white-space: pre-wrap;
+}
